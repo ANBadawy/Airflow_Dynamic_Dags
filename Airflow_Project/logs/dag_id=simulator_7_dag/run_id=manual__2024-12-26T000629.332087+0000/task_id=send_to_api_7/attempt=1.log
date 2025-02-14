@@ -1,0 +1,27 @@
+[2024-12-26T02:07:16.393+0200] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-26T02:07:16.413+0200] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: simulator_7_dag.send_to_api_7 manual__2024-12-26T00:06:29.332087+00:00 [queued]>
+[2024-12-26T02:07:16.425+0200] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: simulator_7_dag.send_to_api_7 manual__2024-12-26T00:06:29.332087+00:00 [queued]>
+[2024-12-26T02:07:16.427+0200] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-12-26T02:07:16.465+0200] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): send_to_api_7> on 2024-12-26 00:06:29.332087+00:00
+[2024-12-26T02:07:16.469+0200] {standard_task_runner.py:72} INFO - Started process 188606 to run task
+[2024-12-26T02:07:16.473+0200] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'simulator_7_dag', 'send_to_api_7', 'manual__2024-12-26T00:06:29.332087+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/Dynamic_Dags.py', '--cfg-path', '/tmp/tmpqc2i0yl2']
+[2024-12-26T02:07:16.475+0200] {standard_task_runner.py:105} INFO - Job 22: Subtask send_to_api_7
+[2024-12-26T02:07:16.565+0200] {task_command.py:467} INFO - Running <TaskInstance: simulator_7_dag.send_to_api_7 manual__2024-12-26T00:06:29.332087+00:00 [running]> on host ali-nasser.gizasystems.local
+[2024-12-26T02:07:16.723+0200] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='simulator_7_dag' AIRFLOW_CTX_TASK_ID='send_to_api_7' AIRFLOW_CTX_EXECUTION_DATE='2024-12-26T00:06:29.332087+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-26T00:06:29.332087+00:00'
+[2024-12-26T02:07:16.726+0200] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-12-26T02:07:16.728+0200] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-12-26T02:07:16.729+0200] {logging_mixin.py:190} INFO - Current task name:send_to_api_7 state:running start_date:2024-12-26 00:07:16.415960+00:00
+[2024-12-26T02:07:16.732+0200] {logging_mixin.py:190} INFO - Dag name:simulator_7_dag and current dag run status:running
+[2024-12-26T02:07:16.734+0200] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-26T02:07:16.760+0200] {logging_mixin.py:190} WARNING - /mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665 RuntimeWarning: DateTimeField SimulatorResult.timestamp received a naive datetime (2024-12-26 00:07:16) while time zone support is active.
+[2024-12-26T02:07:16.779+0200] {logging_mixin.py:190} INFO - Response saved for Simulator 7: {'asset_id': 1, 'attribute_id': 'output_1', 'timestamp': '2024-12-26T00:07:16Z[UTC]', 'value': 298.50983921072213}
+[2024-12-26T02:07:16.782+0200] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-26T02:07:16.797+0200] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-26T02:07:16.799+0200] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=simulator_7_dag, task_id=send_to_api_7, run_id=manual__2024-12-26T00:06:29.332087+00:00, execution_date=20241226T000629, start_date=20241226T000716, end_date=20241226T000716
+[2024-12-26T02:07:16.832+0200] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-12-26T02:07:16.834+0200] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-12-26T02:07:16.836+0200] {logging_mixin.py:190} INFO - Dag name:simulator_7_dag queued_at:2024-12-26 00:06:29.409714+00:00
+[2024-12-26T02:07:16.838+0200] {logging_mixin.py:190} INFO - Task hostname:ali-nasser.gizasystems.local operator:PythonOperator
+[2024-12-26T02:07:16.847+0200] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-26T02:07:16.869+0200] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-26T02:07:16.873+0200] {local_task_job_runner.py:245} INFO - ::endgroup::

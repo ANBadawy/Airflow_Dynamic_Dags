@@ -1,0 +1,27 @@
+[2024-12-26T02:01:48.810+0200] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-26T02:01:48.852+0200] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: simulator_6_dag.send_to_api_6 scheduled__2024-12-25T23:00:00+00:00 [queued]>
+[2024-12-26T02:01:48.876+0200] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: simulator_6_dag.send_to_api_6 scheduled__2024-12-25T23:00:00+00:00 [queued]>
+[2024-12-26T02:01:48.878+0200] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-12-26T02:01:48.917+0200] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): send_to_api_6> on 2024-12-25 23:00:00+00:00
+[2024-12-26T02:01:48.921+0200] {standard_task_runner.py:72} INFO - Started process 188507 to run task
+[2024-12-26T02:01:48.925+0200] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'simulator_6_dag', 'send_to_api_6', 'scheduled__2024-12-25T23:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/Dynamic_Dags.py', '--cfg-path', '/tmp/tmpqxrc422g']
+[2024-12-26T02:01:48.927+0200] {standard_task_runner.py:105} INFO - Job 17: Subtask send_to_api_6
+[2024-12-26T02:01:49.027+0200] {task_command.py:467} INFO - Running <TaskInstance: simulator_6_dag.send_to_api_6 scheduled__2024-12-25T23:00:00+00:00 [running]> on host ali-nasser.gizasystems.local
+[2024-12-26T02:01:49.209+0200] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='simulator_6_dag' AIRFLOW_CTX_TASK_ID='send_to_api_6' AIRFLOW_CTX_EXECUTION_DATE='2024-12-25T23:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-12-25T23:00:00+00:00'
+[2024-12-26T02:01:49.212+0200] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-12-26T02:01:49.213+0200] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-12-26T02:01:49.215+0200] {logging_mixin.py:190} INFO - Current task name:send_to_api_6 state:running start_date:2024-12-26 00:01:48.857399+00:00
+[2024-12-26T02:01:49.217+0200] {logging_mixin.py:190} INFO - Dag name:simulator_6_dag and current dag run status:running
+[2024-12-26T02:01:49.218+0200] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-26T02:01:49.245+0200] {logging_mixin.py:190} WARNING - /mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1665 RuntimeWarning: DateTimeField SimulatorResult.timestamp received a naive datetime (2024-12-26 00:01:49) while time zone support is active.
+[2024-12-26T02:01:49.265+0200] {logging_mixin.py:190} INFO - Response saved for Simulator 6: {'asset_id': 1, 'attribute_id': 'output_1', 'timestamp': '2024-12-26T00:01:49Z[UTC]', 'value': 451.84902543826877}
+[2024-12-26T02:01:49.267+0200] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-26T02:01:49.281+0200] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-26T02:01:49.283+0200] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=simulator_6_dag, task_id=send_to_api_6, run_id=scheduled__2024-12-25T23:00:00+00:00, execution_date=20241225T230000, start_date=20241226T000148, end_date=20241226T000149
+[2024-12-26T02:01:49.317+0200] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-12-26T02:01:49.318+0200] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-12-26T02:01:49.322+0200] {logging_mixin.py:190} INFO - Dag name:simulator_6_dag queued_at:2024-12-26 00:00:01.503593+00:00
+[2024-12-26T02:01:49.324+0200] {logging_mixin.py:190} INFO - Task hostname:ali-nasser.gizasystems.local operator:PythonOperator
+[2024-12-26T02:01:49.339+0200] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-26T02:01:49.364+0200] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-26T02:01:49.367+0200] {local_task_job_runner.py:245} INFO - ::endgroup::

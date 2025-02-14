@@ -1,0 +1,120 @@
+[2024-12-25T23:39:59.267+0200] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-25T23:39:59.290+0200] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: simulator_2_dag.send_to_api_2 manual__2024-12-25T21:33:18.180019+00:00 [queued]>
+[2024-12-25T23:39:59.303+0200] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: simulator_2_dag.send_to_api_2 manual__2024-12-25T21:33:18.180019+00:00 [queued]>
+[2024-12-25T23:39:59.306+0200] {taskinstance.py:2866} INFO - Starting attempt 2 of 2
+[2024-12-25T23:39:59.347+0200] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): send_to_api_2> on 2024-12-25 21:33:18.180019+00:00
+[2024-12-25T23:39:59.351+0200] {standard_task_runner.py:72} INFO - Started process 183437 to run task
+[2024-12-25T23:39:59.353+0200] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'simulator_2_dag', 'send_to_api_2', 'manual__2024-12-25T21:33:18.180019+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/Dynamic_Dags.py', '--cfg-path', '/tmp/tmpxtb82a3z']
+[2024-12-25T23:39:59.356+0200] {standard_task_runner.py:105} INFO - Job 6: Subtask send_to_api_2
+[2024-12-25T23:39:59.442+0200] {task_command.py:467} INFO - Running <TaskInstance: simulator_2_dag.send_to_api_2 manual__2024-12-25T21:33:18.180019+00:00 [running]> on host ali-nasser.gizasystems.local
+[2024-12-25T23:39:59.552+0200] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='simulator_2_dag' AIRFLOW_CTX_TASK_ID='send_to_api_2' AIRFLOW_CTX_EXECUTION_DATE='2024-12-25T21:33:18.180019+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-25T21:33:18.180019+00:00'
+[2024-12-25T23:39:59.555+0200] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-12-25T23:39:59.556+0200] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-12-25T23:39:59.558+0200] {logging_mixin.py:190} INFO - Current task name:send_to_api_2 state:running start_date:2024-12-25 21:39:59.292635+00:00
+[2024-12-25T23:39:59.560+0200] {logging_mixin.py:190} INFO - Dag name:simulator_2_dag and current dag run status:running
+[2024-12-25T23:39:59.562+0200] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-25T23:39:59.593+0200] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/dags/Dynamic_Dags.py", line 165, in send_to_api
+    timestamp=datetime.strptime(response_data.get("timestamp"), "%Y-%m-%dT%H:%M:%SZ[UTC]"),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/_strptime.py", line 554, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2024-12-25T21:39:59Z' does not match format '%Y-%m-%dT%H:%M:%SZ[UTC]'
+[2024-12-25T23:39:59.643+0200] {logging_mixin.py:190} INFO - Task instance in failure state
+[2024-12-25T23:39:59.650+0200] {logging_mixin.py:190} INFO - Task start:2024-12-25 21:39:59.292635+00:00 end:2024-12-25 21:39:59.643100+00:00 duration:0.350465
+[2024-12-25T23:39:59.652+0200] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): send_to_api_2> dag:<DAG: simulator_2_dag> dagrun:<DagRun simulator_2_dag @ 2024-12-25 21:33:18.180019+00:00: manual__2024-12-25T21:33:18.180019+00:00, state:running, queued_at: 2024-12-25 21:33:18.266982+00:00. externally triggered: True>
+[2024-12-25T23:39:59.654+0200] {logging_mixin.py:190} INFO - Failure caused by time data '2024-12-25T21:39:59Z' does not match format '%Y-%m-%dT%H:%M:%SZ[UTC]'
+[2024-12-25T23:39:59.658+0200] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=simulator_2_dag, task_id=send_to_api_2, run_id=manual__2024-12-25T21:33:18.180019+00:00, execution_date=20241225T213318, start_date=20241225T213959, end_date=20241225T213959
+[2024-12-25T23:39:59.705+0200] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-25T23:39:59.709+0200] {standard_task_runner.py:124} ERROR - Failed to execute job 6 for task send_to_api_2 (time data '2024-12-25T21:39:59Z' does not match format '%Y-%m-%dT%H:%M:%SZ[UTC]'; 183437)
+Traceback (most recent call last):
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/Assignments/Airflow/airflow/dags/Dynamic_Dags.py", line 165, in send_to_api
+    timestamp=datetime.strptime(response_data.get("timestamp"), "%Y-%m-%dT%H:%M:%SZ[UTC]"),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/_strptime.py", line 554, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2024-12-25T21:39:59Z' does not match format '%Y-%m-%dT%H:%M:%SZ[UTC]'
+[2024-12-25T23:39:59.770+0200] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-12-25T23:39:59.799+0200] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-25T23:39:59.802+0200] {local_task_job_runner.py:245} INFO - ::endgroup::

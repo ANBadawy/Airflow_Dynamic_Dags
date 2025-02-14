@@ -1,0 +1,21 @@
+{
+    "asset_id": "1",
+    "attribute_id": "1",
+    "timestamp": "2022-07-31T23:28:47Z[UTC]",
+    "value": "33"
+}
+
+
+{
+    "asset_id": "1",
+    "attribute_id": "3",
+    "timestamp": "2022-07-31T23:28:47Z[UTC]",
+    "value": "cathouse"
+}
+
+{
+    "asset_id": "5",
+    "attribute_id": "2",
+    "timestamp": "2022-07-31T23:28:47Z[UTC]",
+    "value": "15"
+}
